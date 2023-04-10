@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <form name="example" method="post" onsubmit="return false">
+    <fieldset>
+    <label for="example">example hai</label>
+    <input type="text" name="example" id="example" autocomplete="off" maxlength="10"><br>
+    <input type="range" value="200" step="10" min="0" max="500" name="range" id="range" placeholder="enter range"><br>
+    <input type="date" id="date" placeholder="select a date" >
+    <input type="password" id="pass" placeholder="Enter your password"><br>
+    <input type="tel"  id="tel"placeholder="(XXX)-XXX-XXXX"><br>
+    <input type="url"  id="url" placeholder="enter the url"><br>
+    <textarea cols="20" rows="5" wrap="hard" id="story" name="story">
+        Say something
+        </textarea>
+    <button type="submit" id="submit" name="submit" onclick="Validate()">Click me!</button>
+    <button type="reset" id="reset" name="reset">Reset</button>
+</fieldset>
+<iframe src="https://www.google.com"></iframe>
+<img src="https://www.w3schools.com/html/workplace.jpg" name="image" id="image" alt="image" usemap="#imgmap">
+<map name="imgmap">
+ <area shape="rect" coords="34,44,270,350" href="https://www.google.com/">
+ <area shape="circle" coords="350,320,44"  href="https://www.google.com/">
+</map>
+<audio controls>
+    <source src="http://commondatastorage.googleapis.com/codeskulptor-demos/DDR_assets/Kangaroo_MusiQue_-_The_Neverwritten_Role_Playing_Game.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+  <video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<script src="index.js"></script>
+</body>
+ <!-- rect - defines a rectangular region
+    • circle - defines a circular region
+    • poly - defines a polygonal region
+    • default - defines the entire region-->
+</html>
+<!-- audio
+    Attribute	Value	Description
+autoplay	autoplay	Specifies that the audio will start playing as soon as it is ready
+controls	controls	Specifies that audio controls should be displayed (such as a play/pause button etc)
+loop	loop	Specifies that the audio will start over again, every time it is finished
+muted	muted	Specifies that the audio output should be muted
+preload	auto
+metadata
+none	Specifies if and how the author thinks the audio should be loaded when the page loads
+src	URL	Specifies the URL of the audio file-->
+
+<!--video
+    autoplay	autoplay	Specifies that the video will start playing as soon as it is ready
+controls	controls	Specifies that video controls should be displayed (such as a play/pause button etc).
+height	pixels	Sets the height of the video player
+loop	loop	Specifies that the video will start over again, every time it is finished
+muted	muted	Specifies that the audio output of the video should be muted
+poster	URL	Specifies an image to be shown while the video is downloading, or until the user hits the play button
+preload	auto
+metadata
+none	Specifies if and how the author thinks the video should be loaded when the page loads
+src	URL	Specifies the URL of the video file
+width	pixels	Sets the width of the video player 
+
+
+-->

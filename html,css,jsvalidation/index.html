@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <h1>forms</h1><br>
+   <p>fill this form </p><br>
+   <fieldset>
+   <form name="test"  method="post" onsubmit="return false">
+    <label for="name">Enter name:</label>
+    <input name="name" id="name" type="text"><br>
+    <label for="value">Enter age:</label>
+    <input type="number" id="age" name="age" value="age">
+    <br>
+    <label for="email">Enter email:</label>
+    <input type="text" id="email" name="email" ><br>
+    <label for="gender">Select gender:</label><br>
+    <input type="radio" name="gender" id="male" value="male">Male<br>
+    <input type="radio" name="gender" id="female" value="female">Female<br>
+    <br>
+    <label for="course">Select a course:</label><br>
+    <select name="course" id="course">
+    <option name="select" value="select">select</option>
+     <option name="BDS" value="BDS">BDS</option>
+     <option name="BCE" value="BCE">BCE</option>
+     <option name="CED" value="CED">CED</option>
+    </select>
+    <br>
+    <label for="text">Enter text</label>
+    <textarea name="interest" id="interest"></textarea><br>
+    <label for="file" >Upload your resume</label>
+    <input type="file" id="resume" name="resume"><br>
+    <input type="checkbox" name="agree" id="agree">I agree to <strong>terms and conditions</strong><br>
+    <br>
+    <button onclick="validate()" id="submit" name="submit">sumbit</button>
+</fieldset>
+    </form>
+<script src="index.js"></script>
+</body>
+</html>

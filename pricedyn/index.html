@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="test" method="post" >
+        <input type="number" placeholder="enter the total items" id="item" onchange="getprice()"><br>
+        <input type="number" placeholder="enter the price of items" id="price" onchange="getprice()"><br>
+        <p name="result" id="result"></p>
+        <button type="submit" name="submit">Submit</button>
+    </form>
+<script>
+    function getprice() {
+        var num,price;
+        num=document.getElementById("item").value;
+        price=document.getElementById("price").value;
+        var xml = new XMLHttpRequest();
+        url="http://localhost/PRICEDYN/getresult.php";
+        url=url+"?num="+num+"&price="+price;
+        xml.open("GET", url,true);
+        xml.onreadystatechange=function(){
+            if(xml.readyState==4&&xml.status==200){
+                document.getElementById("result").innerHTML=this.responseText;
+            }
+        }
+        xml.send();
+    }
+</script>
+</body>
+<script>
+
+</script>
+</html>

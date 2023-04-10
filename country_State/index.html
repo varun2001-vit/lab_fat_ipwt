@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getval()">
+    <h1>Select a country</h1>
+    <select name="country" id="country" onchange="sendVal(this.value)"  >
+    </select>
+    <br>
+    <h1>select a state</h1>
+    <select name="state" id="state">
+
+    </select>
+<script>
+    function getval(){
+        alert("loaded")
+        var xml=new XMLHttpRequest();
+        var url="http://localhost/country_State/getcountry.php"
+        xml.open('GET', url, true);
+        xml.onreadystatechange=function(){
+            if(xml.readyState==4 && xml.status==200)
+            {
+                console.log(this.responseText);
+                document.getElementById("country").innerHTML=this.responseText;
+
+            }
+           
+        }
+        xml.send();
+      
+    }
+    function sendVal(str)
+    {
+        var xml= new XMLHttpRequest();
+        var url="http://localhost/country_State/getstate.php"
+        url=url+"?q="+str
+        xml.open("GET",url,true);
+        xml.onreadystatechange=function()
+        {
+            if(xml.readyState==4 && xml.status==200)
+            {
+                console.log(this.responseText);
+                document.getElementById("state").innerHTML=this.responseText
+            }
+        }
+        xml.send()
+    }
+
+</script>
+</body>
+</html>

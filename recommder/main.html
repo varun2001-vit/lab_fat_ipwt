@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="rec" name="rec" placeholder="enter a word" onkeyup="getrec(this.value)">
+    <p id="rem" name="rem"></p>
+<script>
+function getrec(str) {
+    var s=str;
+    url="http://localhost/RECOMMDER/recom.php";
+    url=url+"?val="+s;
+    var xml = new XMLHttpRequest();
+    xml.open("GET", url, true);
+    xml.onreadystatechange=function(){
+        if (xml.readyState==4 && xml.status==200){
+        var responseText = xml.responseText;
+        document.getElementById("rem").innerHTML = responseText;
+    }
+    }
+    xml.send();
+}
+</script>
+</body>
+</html>
