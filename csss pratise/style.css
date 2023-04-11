@@ -1,0 +1,39 @@
+p{
+    column-count:3;
+    column-fill:balance;
+    column-gap: 5px;
+    column-rule: 4px double #ff00ff;
+    column-span: inherit;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #ff0c0c; 
+    margin:30px;
+    display:inline-block;
+    z-index:3;
+    position: relative;
+    text-indent: 1em; 
+}
+.test{
+    background-color:#75919d;
+    text-decoration:underline;
+}
+#example{
+    position: absolute;
+    left: 40rem;
+    top: 90px;
+    z-index:1;
+}
+#sample{
+   height:200px;
+   width: 200px;
+   border-radius: 50%;
+   border: 1px solid #d60000;
+   float:left;
+}
+body{
+    background-image:url(test.jpg);
+    background-position: bottom-right;
+    background-repeat: repeat;
+}
