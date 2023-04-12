@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Select a date :<input type="date" name="dob" id="dob"><br>
+    <p id="age"></p>
+    <button type="button" id="calculate" onclick="cal()">calculate</button>
+    <script>
+    function cal(){
+        var v1=document.getElementById("dob").value;
+        var d= new Date(v1);
+        var today= new Date();
+        var age=today.getFullYear()-d.getFullYear();
+        if(today.getMonth()<d.getMonth() || today.getMonth()==d.getMonth() &today.getDay()<d.getDay())
+        {
+            age--;
+        }
+        document.getElementById("age").innerHTML=age;
+    }
+
+    </script>
+</body>
+</html>
