@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="captcha()">
+    <h1>Capcha generator</h1>
+    <input type="text" placeholder="Enter the captcha" id="data">
+    <button type="button" id="cap" onclick="check()">Clicks</button>
+    <p id="test"></p>
+</body>
+<script>
+    function captcha(){
+        var s="abcdefghijklmnopqrstuvwxyz"
+        var a=Math.round(Math.random()*100)
+        var cap=""
+        for(var i=0;i<4;i++){
+            var a=Math.round(Math.random()*100)
+            a=a%s.length;
+            cap=cap+s.charAt(a);
+
+        }
+        document.getElementById("test").innerHTML=cap
+        }
+        function check(){
+            var v1=document.getElementById("test").innerHTML;
+            var v2=document.getElementById("data").value;
+            // console.log(v1);
+            // console.log(v2);
+            // var flag=0;
+            // if(v1.length!=v2.length){
+            //     flag=1
+            // }
+            // for(var i=0;i<v1.length;i++){
+            //     if(v1.charAt(i)!=v2.charAt(i))
+            //     {
+            //         flag=1 
+            //         break;
+            //     }
+            // }
+            // if(flag==0)
+            // {
+            //     alert("same")
+            // }else{
+            //     alert("not same")
+            // }
+            var xml = new XMLHttpRequest();
+            var url="http://localhost/CAPTCHAGENERATOR/check.php"
+            url=url+"?v1="+v1+"&v2="+v2
+            xml.open("GET", url, true);
+            xml.onreadystatechange=function(){
+                if(this.readyState==4 && xml.status==200)
+                {
+                    alert(this.responseText)
+                }
+            }
+            xml.send();
+
+        }
+
+
+</script>
+</html>
